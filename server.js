@@ -101,7 +101,7 @@ user.save(function(err){
   });}else{
   res.status(200).send({token: createToken(user), data:user, message: 'El usuario ya existe'});
 }
-});
+});});
 //GET Ususarios
 UsersRoute.get(isAuth,(req, res) => {
   // Use  model to find all 
