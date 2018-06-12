@@ -83,7 +83,7 @@ UsersRoute.post(function(req, res) {
     console.log(req.body[0]);
     //User.find({ Numid: req.body.numid }, (err, user) => {
 
-        if (err) return res.status(500).send({ message: err });
+      //  if (err) return res.status(500).send({ message: err });
       //  if (user.numid == req.body.numid) return res.status(200).send({ token: createToken(user), data: user, message: 'El usuario ya existe' });
 
 
