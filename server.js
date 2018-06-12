@@ -112,6 +112,16 @@ UsersRoute.get(isAuth,(req, res) => {
     res.json(users);
   });
 });
+var usuarioidRoute= router.route('/Users/:id_usuario');
+usuarioidRoute.delete(isAuth,(req, res) => {
+  // Use the Beer model to find a specific beer and remove it
+  usuarioidRoute.findByIdAndRemove(req.params.id_usuario, function(err) {
+    if (err)
+      res.send(err);
+
+    res.json({ message: 'El usuario se ha eliminado!' });
+  });
+});
 //Configuración de la cámara
 var CamaraRoute2 = router.route('/camara/:archivo');
 CamaraRoute2.get(function  (req,res){
