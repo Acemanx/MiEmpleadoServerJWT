@@ -79,6 +79,10 @@ var UsersRoute= router.route('/Users');
 UsersRoute.post(function(req,res){
 var user = new User();
 console.log(req.body[0]);
+  User.find({Numid:req.body.numid}, (err,user) => {
+
+    if (err) return res.status(500).send({message: err});
+    if(user==""){
 user.Numid = req.body.numid;
 user.Contrasena=req.body.contrasena;
 
@@ -94,7 +98,9 @@ user.save(function(err){
     if (err) res.status(500).send({message: 'Error al crear usuario ${err}'})
 
     res.status(200).send({token: createToken(user), data:user, message: 'Usuario creado'})
-  });
+  });}else{
+  res.status(200).send({token: createToken(user), data:user, message: 'El usuario ya existe'});
+}
 });
 //GET Ususarios
 UsersRoute.get(isAuth,(req, res) => {
