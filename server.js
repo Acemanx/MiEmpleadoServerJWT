@@ -115,7 +115,7 @@ UsersRoute.get(isAuth,(req, res) => {
 var usuarioidRoute= router.route('/Users/:id_usuario');
 usuarioidRoute.delete(isAuth,(req, res) => {
   // Use the Beer model to find a specific beer and remove it
-  Users.findByIdAndRemove(req.params.id_usuario, function(err) {
+  User.findByIdAndRemove(req.params.id_usuario, function(err) {
     if (err)
       res.send(err);
 
