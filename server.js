@@ -84,7 +84,7 @@ UsersRoute.post(function(req, res) {
     User.find({ Numid: req.body.numid }, (err, usuario1) => {
 
        if (err) return res.status(500).send({ message: err });
-       if (usuario==""){    user.Numid = req.body.numid;
+       if (usuario1==""){    user.Numid = req.body.numid;
         user.Contrasena = req.body.contrasena;
 
         var camaraimage = req.body.imagen;
