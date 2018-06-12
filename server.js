@@ -118,7 +118,7 @@ usuarioidRoute.delete(isAuth,(req, res) => {
   User.findByIdAndRemove(req.params.id_usuario, function(err) {
     if (err)
       res.send(err);
-
+ 
     res.json({ message: 'El usuario se ha eliminado!' });
   });
 });
