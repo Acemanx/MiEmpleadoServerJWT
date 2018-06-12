@@ -81,10 +81,10 @@ var UsersRoute = router.route('/Users');
 UsersRoute.post(function(req, res) {
     var user = new User();
     console.log(req.body[0]);
-    User.find({ Numid: req.body.numid }, (err, user) => {
+    //User.find({ Numid: req.body.numid }, (err, user) => {
 
         if (err) return res.status(500).send({ message: err });
-        if (user.numid == req.body.numid) return res.status(200).send({ token: createToken(user), data: user, message: 'El usuario ya existe' });
+      //  if (user.numid == req.body.numid) return res.status(200).send({ token: createToken(user), data: user, message: 'El usuario ya existe' });
 
 
         user.Numid = req.body.numid;
@@ -105,7 +105,7 @@ UsersRoute.post(function(req, res) {
         });
 
 
-    });
+   // });
 });
 //GET Ususarios
 UsersRoute.get(isAuth, (req, res) => {
